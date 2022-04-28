@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="55e0951b-da9b-4e2a-a20e-dc78032ae1b9" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="doctus-65Flow" doc:id="2b52773d-d1a2-4d6a-9744-ca22fbda427a" >
+		<http:listener doc:name="Listener" doc:id="ed509518-937c-4278-bc9c-7a5d90ab1d91" config-ref="HTTP_Listener_config" path="/doctus"/>
+		<logger level="INFO" doc:name="Logger" doc:id="0ddd5ecd-aeaa-4ae0-9ea1-be35cb6f7fc4" message="in application"/>
+	</flow>
+</mule>
